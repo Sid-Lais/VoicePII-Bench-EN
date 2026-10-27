@@ -53,9 +53,28 @@ Example clip (`pii_phi_voice_benchmark_dataset.csv`):
 
 ## How it works
 
-<div align="center">
-  <img src="docs/images/voicepii-pipeline.svg" alt="Evaluation pipeline: audio, ASR, detector, span match, F1 table" width="100%">
-</div>
+```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 24, "rankSpacing": 36, "padding": 6, "wrappingWidth": 260, "htmlLabels": true}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart LR
+    classDef data fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef code fill:#e5e7eb,stroke:#4b5563,color:#0f172a
+    classDef model fill:#ede9fe,stroke:#7c3aed,color:#0f172a
+
+    A["<b>1. Audio</b><br/>545 clips"]:::data
+    B["<b>2. ASR</b><br/>Cohere, Parakeet"]:::model
+    C["<b>3. Detector</b><br/>GLiNER, OpenPipe, Piiranha"]:::model
+    D["<b>4. Span match</b><br/>strict, lenient"]:::code
+    E["<b>5. F1 table</b><br/>detector x ASR"]:::code
+    G["<b>Ground-truth text</b><br/>oracle"]:::data
+
+    A -->|audio| B
+    B -->|transcript| C
+    G -.->|oracle| C
+    C -->|spans| D
+    D -->|scores| E
+```
+
+Blue steps are data, purple steps run models, grey steps are scoring code. The dashed path is the oracle condition, which skips ASR.
 
 1. **Transcribe** each clip with an ASR system (`asr.py`).
 2. **Detect** PII/PHI spans in the transcript with a detector (`detectors.py`).
