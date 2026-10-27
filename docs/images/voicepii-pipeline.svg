@@ -2,38 +2,36 @@
   <title id="t">VoicePII-Bench pipeline</title>
   <desc id="d">Audio goes through ASR to a transcript, then a PII detector, then span matching against ground truth to produce F1 scores.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0d1a"/><stop offset="1" stop-color="#120d2b"/></linearGradient>
-    <linearGradient id="ln" x1="0" x2="1"><stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#ff4d8d"/></linearGradient>
-    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c9cbe0"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6f3fb"/></linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6b7088"/></marker>
   </defs>
-  <rect width="1200" height="290" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="290" rx="18" fill="url(#bg)" stroke="#e4def0"/>
   <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
-    <g stroke-width="2" fill="#12152b">
-      <rect x="30" y="70" width="190" height="96" rx="14" stroke="#00e5ff"/>
-      <rect x="265" y="70" width="190" height="96" rx="14" stroke="#8b5cf6"/>
-      <rect x="500" y="70" width="190" height="96" rx="14" stroke="#8b5cf6"/>
-      <rect x="735" y="70" width="190" height="96" rx="14" stroke="#ff4d8d"/>
-      <rect x="970" y="70" width="200" height="96" rx="14" stroke="#ff4d8d"/>
+    <g stroke-width="2" fill="#fff">
+      <rect x="30" y="70" width="190" height="96" rx="14" stroke="#4a1a78"/>
+      <rect x="265" y="70" width="190" height="96" rx="14" stroke="#6a2c8a"/>
+      <rect x="500" y="70" width="190" height="96" rx="14" stroke="#8d3a8c"/>
+      <rect x="735" y="70" width="190" height="96" rx="14" stroke="#b8466f"/>
+      <rect x="970" y="70" width="200" height="96" rx="14" stroke="#d6405f"/>
     </g>
-    <g fill="#fff" font-size="19" font-weight="700">
+    <g fill="#12163a" font-size="19" font-weight="700">
       <text x="125" y="108">Audio</text><text x="360" y="108">ASR</text><text x="595" y="108">Detector</text><text x="830" y="108">Span match</text><text x="1070" y="108">F1 table</text>
     </g>
-    <g fill="#aeb2cc" font-size="14.5">
+    <g fill="#6b7088" font-size="14.5">
       <text x="125" y="132">545 mp3 clips</text><text x="125" y="151">audio_en/</text>
       <text x="360" y="132">Cohere · Parakeet</text><text x="360" y="151">asr.py</text>
       <text x="595" y="132">GLiNER · OpenPipe</text><text x="595" y="151">Piiranha · detectors.py</text>
       <text x="830" y="132">strict · lenient</text><text x="830" y="151">scoring.py</text>
       <text x="1070" y="132">per detector × ASR</text><text x="1070" y="151">build_table.py</text>
     </g>
-    <g stroke="url(#ln)" stroke-width="2.5" marker-end="url(#ar)" fill="none">
+    <g stroke="#6b7088" stroke-width="2" marker-end="url(#ar)" fill="none">
       <path d="M222 118H261"/><path d="M457 118H496"/><path d="M692 118H731"/><path d="M927 118H966"/>
     </g>
-    <g font-size="13" fill="#7f84a8" letter-spacing="1.5">
+    <g font-size="13" fill="#8a8fa8" letter-spacing="1.5">
       <text x="360" y="196">TRANSCRIPT</text><text x="830" y="196">VS GROUND-TRUTH SPANS</text>
     </g>
-    <path d="M125 40 H1070" stroke="#ffffff" stroke-opacity=".0"/>
-    <text x="600" y="38" fill="#c9cbe0" font-size="15" font-weight="700" letter-spacing="3">EVALUATION PIPELINE</text>
-    <path d="M125 214 V236 Q125 244 133 244 H1062 Q1070 244 1070 236 V214" stroke="#ffffff" stroke-opacity=".25" stroke-dasharray="5 5" fill="none" marker-end="url(#ar)"/>
-    <text x="600" y="270" fill="#7f84a8" font-size="13">oracle condition skips ASR and scores ground-truth text directly</text>
+    <text x="600" y="38" fill="#4a1a78" font-size="15" font-weight="700" letter-spacing="3">EVALUATION PIPELINE</text>
+    <path d="M125 214 V236 Q125 244 133 244 H1062 Q1070 244 1070 236 V214" stroke="#b9b3cc" stroke-dasharray="5 5" fill="none" marker-end="url(#ar)"/>
+    <text x="600" y="270" fill="#8a8fa8" font-size="13">oracle condition skips ASR and scores ground-truth text directly</text>
   </g>
 </svg>

@@ -2,11 +2,11 @@
   <img src="docs/images/voicepii-hero.svg" alt="VoicePII-Bench-EN: PII/PHI detection under ASR noise" width="100%">
 
   <p>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square" alt="MIT code license"></a>
-    <a href="#license"><img src="https://img.shields.io/badge/dataset-CC--BY--4.0-00b8d4?style=flat-square" alt="CC-BY-4.0 dataset"></a>
-    <a href="pii_phi_voice_benchmark_dataset.csv"><img src="https://img.shields.io/badge/clips-545-ff4d8d?style=flat-square" alt="545 clips"></a>
-    <a href="#dataset"><img src="https://img.shields.io/badge/entity_classes-109-8b5cf6?style=flat-square" alt="109 entity classes"></a>
-    <a href="#setup"><img src="https://img.shields.io/badge/Python-3.9+-3776ab?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-12163a.svg?style=flat-square" alt="MIT code license"></a>
+    <a href="#license"><img src="https://img.shields.io/badge/dataset-CC--BY--4.0-4a1a78?style=flat-square" alt="CC-BY-4.0 dataset"></a>
+    <a href="pii_phi_voice_benchmark_dataset.csv"><img src="https://img.shields.io/badge/clips-545-d6405f?style=flat-square" alt="545 clips"></a>
+    <a href="#dataset"><img src="https://img.shields.io/badge/entity_classes-109-8d3a8c?style=flat-square" alt="109 entity classes"></a>
+    <a href="#setup"><img src="https://img.shields.io/badge/Python-3.9+-12163a?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+"></a>
   </p>
 
   <h3>What happens to PII/PHI detection when the text comes from speech?</h3>
